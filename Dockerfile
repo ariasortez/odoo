@@ -11,6 +11,8 @@ USER 0
 RUN apt-get -y update && apt-get install -y --no-install-recommends locales netcat-openbsd \
     && locale-gen ${LOCALE}
 
+WORKDIR /app
+
 COPY entrypoint.sh ./
 RUN chmod +x /app/entrypoint.sh
 
